@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cn.smbms.dao.UserMapper">
+<!--    <resultMap type="java.util.HashMap" id="dogUser">-->
+<!--        &lt;!&ndash; column的值为数据库字段名，property得值为实体类的属性名 &ndash;&gt;-->
+<!--        &lt;!&ndash; javaType为java里面数据类型，jdbcType为数据库类型 &ndash;&gt;-->
+<!--        <result column="dogId" property="dogId" javaType="java.lang.Integer" jdbcType="INTEGER"/>-->
+<!--        <result column="dogname"  property="dogname" javaType="java.lang.String" jdbcType="VARCHAR"/>-->
+<!--        <result column="dogpwd "  property="dogpwd" javaType="java.lang.String" jdbcType="VARCHAR"/>-->
+<!--        <result column="dogAge"  property="dogAge" javaType="java.lang.Integer" jdbcType="INTEGER"/>-->
+<!--    </resultMap>-->
+
+
+<!--&lt;!&ndash;    登录&ndash;&gt;-->
+<!--    <parameterMap type="java.util.Map" id="saveDept1">-->
+<!--        <parameter property="dogname1" jdbcType="VARCHAR" mode="IN" />-->
+<!--        <parameter property="dogpwd1" jdbcType="VARCHAR" mode="IN" />-->
+<!--    </parameterMap>-->
+<!--    <select id="dl" statementType="CALLABLE" resultType="cn.smbms.pojo.User" parameterMap="saveDept1">-->
+<!--        {call dl(?,?)}-->
+<!--    </select>-->
+
+<!--&lt;!&ndash;   查询全部&ndash;&gt;-->
+<!--    <select id="all" statementType="CALLABLE" resultMap="dogUser" >-->
+<!--        {call seleall()}-->
+<!--    </select>-->
+
+<!--&lt;!&ndash;    批量删除&ndash;&gt;-->
+<!--    <parameterMap type="java.util.Map" id="saveDept2">-->
+<!--        <parameter property="dogId" jdbcType="Integer" mode="IN" />-->
+<!--    </parameterMap>-->
+<!--    <delete id="deleteByid" statementType="CALLABLE">-->
+<!--        delete doguser t where t.dogId in-->
+<!--        <foreach collection="array" open="(" close=")" separator="," item="id">-->
+<!--            #{id}-->
+<!--        </foreach>-->
+<!--    </delete>-->
+
+    <select id="loadUsers" resultType="cn.smbms.pojo.User">
+		select * from doguser
+	</select>
+</mapper>
